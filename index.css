@@ -39,6 +39,53 @@ body::before {
   mask-image: linear-gradient(to bottom, black, transparent 78%);
   opacity: 0.55;
 }
+.pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.pair-card {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 26px;
+  padding: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.06);
+}
+
+.pair-img {
+  aspect-ratio: 4 / 5;
+  background-position: center;
+  background-size: cover;
+  border-radius: 18px;
+  position: relative;
+}
+
+.pair-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.25));
+}
+
+.pair-label {
+  margin-top: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-size: 0.72rem;
+}
+
+/* On mobile: pairs stack */
+@media (max-width: 720px) {
+  .pairs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 a {
   color: inherit;
