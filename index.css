@@ -644,7 +644,7 @@ section {
   border-radius: 30px;
   background:
     linear-gradient(180deg, rgba(8, 7, 6, 0.08), rgba(8, 7, 6, 0.42)),
-    url("img5.jpg") center / cover;
+    url("img5.jpeg") center / cover;
   box-shadow: var(--shadow);
 }
 
