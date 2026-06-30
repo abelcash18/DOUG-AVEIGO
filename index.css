@@ -688,10 +688,10 @@ section {
 .atelier-image {
   min-height: 520px;
   border: 1px solid var(--line);
-  border-radius: 30px;
+  border-radius: 25px;
   background:
     linear-gradient(180deg, rgba(8, 7, 6, 0.08), rgba(8, 7, 6, 0.42)),
-    url("img5.jpeg") center / cover;
+    url("img5.png") center / cover;
   box-shadow: var(--shadow);
 }
 
