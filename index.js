@@ -46,3 +46,9 @@ joinButton.addEventListener('click', () => {
   note.textContent = 'Preview request received. DOUG AVEIGO would follow up with a private collection invitation.';
   note.style.color = '#d8b56d';
 });
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  loader.style.opacity = 0;
+  setTimeout(() => loader.style.display = 'none', 3500);
+});
