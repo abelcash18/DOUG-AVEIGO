@@ -948,75 +948,145 @@ footer {
   opacity: 0;
 }
 
-/* The background overlay (dims the rest of the website) */
+
+/* The Popup Overlay (Background dark + blur) */
 .popup-overlay {
-    display: none; /* Hidden by default */
+    display: none; /* Controlled by JS */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-    z-index: 9999; /* Ensures it sits on top of everything else */
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
 }
 
-/* Becomes active via JavaScript */
-.popup-overlay.active {
-    display: flex;
-    opacity: 1;
-}
-
-/* The box containing the image and close button */
+/* The Actual White Popup Box */
 .popup-content {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 12px;
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transform: scale(0.7);
-    transition: transform 0.3s ease-in-out;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 440px; /* Perfect modern desktop width */
+    border-radius: 24px; /* Soft, modern curved corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Keeps image edges clipped to border-radius */
+    animation: popupPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    margin: 20px;
 }
 
-/* Scales up smoothly when active */
-.popup-overlay.active .popup-content {
-    transform: scale(1);
-}
-
-/* Ensures the image responds nicely to screen sizes */
+/* Your Popup Image Wrapper/Sizing */
 .popup-img {
-    display: block;
-    max-width: 500px; /* Adjust this to change maximum width */
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    max-height: 320px;
+    object-fit: cover;
+    display: block;
+    background-color: #f5f5f5; /* Light gray fall-back background */
 }
 
-/* The 'X' close button */
+/* Close Button (Floating Circle top-right) */
 .popup-close-btn {
     position: absolute;
-    top: -15px;
-    right: -15px;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #333;
-    width: 35px;
-    height: 35px;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 28px;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background-color 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 10;
 }
 
 .popup-close-btn:hover {
-    background-color: #ff4d4d; /* Turns red on hover */
+    transform: scale(1.05);
+    background-color: #ffffff;
+}
+
+/* Details Section underneath the Image */
+.popup-body {
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.popup-badge {
+    display: inline-block;
+    color: #0e0e0e;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.popup-title {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    color: #111111;
+    font-weight: 700;
+}
+
+/* Pricing layout */
+.popup-price {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #060606; /* Exact Brand Emerald Green */
+}
+
+.old-price {
+    font-size: 16px;
+    color: #888888;
+    text-decoration: line-through;
+}
+
+/* The Green Action Button */
+.popup-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 14px;
+    background-color: #0b0b0b; /* Exact Brand Emerald Green */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.popup-btn:hover {
+    background-color: #007d59;
+}
+
+.popup-btn:active {
+    transform: scale(0.98);
+}
+
+/* Smooth Springy Entry Animation */
+@keyframes popupPop {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }

@@ -53,24 +53,26 @@ window.addEventListener('load', () => {
   setTimeout(() => loader.style.display = 'none', 7500);
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const popup = document.getElementById("customPopup");
     const closeBtn = document.querySelector(".popup-close-btn");
 
-    // 1. Show the popup automatically on load (with a small 500ms delay for smoother feel)
+    // Automatically trigger popup 1.5 seconds after landing
     setTimeout(() => {
-        popup.classList.add("active");
-    }, 500);
+        popup.style.display = "flex";
+    }, 1500);
 
-    // 2. Close when clicking the "X"
-    closeBtn.addEventListener("click", () => {
-        popup.classList.remove("active");
-    });
+    // Close functionality
+    function closePopup() {
+        popup.style.display = "none";
+    }
 
-    // 3. Close when clicking anywhere outside the popup image box
-    popup.addEventListener("click", (e) => {
+    closeBtn.addEventListener("click", closePopup);
+
+    // Closes if background overlay is clicked (but not the white card itself)
+    popup.addEventListener("click", function (e) {
         if (e.target === popup) {
-            popup.classList.remove("active");
+            closePopup();
         }
     });
 });
