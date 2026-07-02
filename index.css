@@ -947,3 +947,76 @@ footer {
 #loader.fade-out {
   opacity: 0;
 }
+
+/* The background overlay (dims the rest of the website) */
+.popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    z-index: 9999; /* Ensures it sits on top of everything else */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Becomes active via JavaScript */
+.popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* The box containing the image and close button */
+.popup-content {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Scales up smoothly when active */
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+}
+
+/* Ensures the image responds nicely to screen sizes */
+.popup-img {
+    display: block;
+    max-width: 500px; /* Adjust this to change maximum width */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* The 'X' close button */
+.popup-close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.2s;
+}
+
+.popup-close-btn:hover {
+    background-color: #ff4d4d; /* Turns red on hover */
+}

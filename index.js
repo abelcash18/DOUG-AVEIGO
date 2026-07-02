@@ -52,3 +52,25 @@ window.addEventListener('load', () => {
   loader.style.opacity = 0;
   setTimeout(() => loader.style.display = 'none', 7500);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById("customPopup");
+    const closeBtn = document.querySelector(".popup-close-btn");
+
+    // 1. Show the popup automatically on load (with a small 500ms delay for smoother feel)
+    setTimeout(() => {
+        popup.classList.add("active");
+    }, 500);
+
+    // 2. Close when clicking the "X"
+    closeBtn.addEventListener("click", () => {
+        popup.classList.remove("active");
+    });
+
+    // 3. Close when clicking anywhere outside the popup image box
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.classList.remove("active");
+        }
+    });
+});
