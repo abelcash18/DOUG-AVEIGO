@@ -948,6 +948,66 @@ footer {
   opacity: 0;
 }
 
+/* General Footer Styling */
+.site-footer {
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.site-footer p {
+    color: #ffffff;
+    margin: 0; /* Optional: clears default browser spacing */
+}
+
+/* Layout container */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Row layout for larger screens */
+@media (min-width: 600px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Social Media Icons Container */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+/* Individual Icon Circles */
+.social-icon {
+    color: #ffffff;
+    background-color: #333333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.social-icon:hover {
+    background-color: #007bff; /* Turns blue on hover (or change to your brand color) */
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
 
 /* The Popup Overlay (Background dark + blur) */
 .popup-overlay {
