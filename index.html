@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DOUG AVEIGO -Luxury Fashion Collections</title>
+  <title>DOUG AVEIGO - Luxury Fashion Collections</title>
   <link rel="icon" href="favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -12,8 +12,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+  <!-- Global Overlays -->
   <div class="grain"></div>
+  
+  <div id="loader">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
 
+  <!-- Main Layout Container -->
   <div class="page">
     <nav class="nav" aria-label="Main navigation">
       <div class="container nav-inner">
@@ -29,11 +37,7 @@
         </div>
       </div>
     </nav>
-<div id="loader">
-  <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div>
+
     <header id="top" class="container hero">
       <div class="hero-content reveal visible">
         <div class="eyebrow">Luxury ready-to-wear / 2026</div>
@@ -44,15 +48,16 @@
         </p>
         <div class="hero-actions">
           <a class="btn" href="#collections">Explore Collections
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-</svg></a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+          </a>
           <a class="btn ghost" href="#contact">
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
-  </svg>
-  Book a Styling Appointment
-</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+            </svg>
+            Book a Styling Appointment
+          </a>
         </div>
       </div>
       <div class="hero-stage reveal delay-1 visible" aria-label="Editorial fashion campaign image">
@@ -63,30 +68,27 @@
         </div>
       </div>
     </header>
-   <!-- The Popup Overlay/Background -->
-<div id="customPopup" class="popup-overlay">
-    <!-- The Actual Popup Box -->
-    <div class="popup-content">
-        <!-- Close Button -->
-        <span class="popup-close-btn">&times;</span>
-        
-        <!-- Your Popup Image -->
-       <a href="iiii.jpg"><img src="iiii.jpg" alt="Special Offer Popup" class="popup-img"></a>
-        
-        <!-- Product Details / Content Under Image -->
+
+    <!-- Custom Popup Overlay -->
+    <div id="customPopup" class="popup-overlay">
+      <div class="popup-content">
+        <span class="popup-close-btn" aria-label="Close popup">&times;</span>
+        <a href="iiii.jpg" aria-label="View styled trouser full size">
+          <img src="iiii.jpg" alt="Special Offer - Styled Trouser" class="popup-img">
+        </a>
         <div class="popup-body">
-            <span class="popup-badge">✨ NEW ARRIVAL</span>
-            <h3 class="popup-title">Styled Trouser</h3>
-            <div class="popup-price">
-                <span class="current-price">₦25,000</span>
-                <span class="old-price">₦35,000</span>
-            </div>
-            <a href="#contact" class="popup-btn">Shop Now &rarr;</a>
+          <span class="popup-badge">✨ NEW ARRIVAL</span>
+          <h3 class="popup-title">Styled Trouser</h3>
+          <div class="popup-price">
+            <span class="current-price">₦25,000</span>
+            <span class="old-price">₦35,000</span>
+          </div>
+          <a href="#contact" class="popup-btn">Shop Now &rarr;</a>
         </div>
+      </div>
     </div>
-</div>
 
-
+    <!-- Infinite Marquee Section -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
         <span>Tailored Luxury</span><span>Evening Silhouettes</span><span>Modern Atelier</span><span>Limited Capsules</span><span>DOUG AVEIGO</span>
@@ -95,6 +97,7 @@
     </div>
 
     <main>
+      <!-- Collections Section -->
       <section id="collections" class="container">
         <div class="section-head reveal">
           <div>
@@ -108,7 +111,9 @@
         </div>
         <div class="collections">
           <article class="collection-card reveal delay-1">
-           <a href="img4.jpg"> <div class="collection-image" style="background-image:url('img4.jpg')"></div></a>
+            <a href="img4.jpg" aria-label="View Noir Ceremony Collection"> 
+              <div class="collection-image" style="background-image:url('img4.jpg')"></div>
+            </a>
             <div class="collection-copy">
               <span class="tag">01 / Evening</span>
               <h3>Noir Ceremony</h3>
@@ -116,7 +121,9 @@
             </div>
           </article>
           <article class="collection-card reveal delay-2">
-         <a href="img.jpg"><div class="collection-image" style="background-image:url('img.jpg')"></div></a>
+            <a href="img.jpg" aria-label="View Urban Atelier Collection">
+              <div class="collection-image" style="background-image:url('img.jpg')"></div>
+            </a>
             <div class="collection-copy">
               <span class="tag">02 / Tailoring</span>
               <h3>Urban Atelier</h3>
@@ -124,7 +131,9 @@
             </div>
           </article>
           <article class="collection-card reveal delay-3">
-          <a href="img1.jpg"><div class="collection-image" style="background-image:url('img1.jpg')"></div></a>
+            <a href="img1.jpg" aria-label="View Gold Coast Edit Collection">
+              <div class="collection-image" style="background-image:url('img1.jpg')"></div>
+            </a>
             <div class="collection-copy">
               <span class="tag">03 / Resort</span>
               <h3>Gold Coast Edit</h3>
@@ -134,6 +143,7 @@
         </div>
       </section>
 
+      <!-- Lookbook Section -->
       <section id="lookbook" class="container">
         <div class="lookbook-wrap">
           <div class="feature-panel reveal">
@@ -153,7 +163,7 @@
           </div>
           <div class="products">
             <article class="product-card reveal delay-1">
-            <a href="img2.jpg"><div class="product-img" style="background-image:url('img2.jpg')"></div></a>
+              <a href="img2.jpg" aria-label="View Luxury Fitted Trouser"><div class="product-img" style="background-image:url('img2.jpg')"></div></a>
               <div class="product-meta">
                 <div>
                   <h4>Luxury Fitted Trouser</h4>
@@ -163,7 +173,7 @@
               </div>
             </article>
             <article class="product-card reveal delay-2">
-            <a href="img6.jpeg"><div class="product-img" style="background-image:url('img6.jpeg')"></div></a>
+              <a href="img6.jpeg" aria-label="View Silk Column Dress"><div class="product-img" style="background-image:url('img6.jpeg')"></div></a>
               <div class="product-meta">
                 <div>
                   <h4>Silk Column Dress</h4>
@@ -173,7 +183,7 @@
               </div>
             </article>
             <article class="product-card reveal delay-1">
-           <a href="img3.jpg"><div class="product-img" style="background-image:url('img3.jpg')"></div></a>
+              <a href="img3.jpg" aria-label="View Monogram Knit"><div class="product-img" style="background-image:url('img3.jpg')"></div></a>
               <div class="product-meta">
                 <div>
                   <h4>Monogram Knit</h4>
@@ -183,7 +193,7 @@
               </div>
             </article>
             <article class="product-card reveal delay-2">
-            <a href="img7.jpg"><div class="product-img" style="background-image:url('img7.jpg')"></div></a>
+              <a href="img7.jpg" aria-label="View Gilded Trousers"><div class="product-img" style="background-image:url('img7.jpg')"></div></a>
               <div class="product-meta">
                 <div>
                   <h4>Gilded Trousers</h4>
@@ -196,7 +206,7 @@
         </div>
       </section>
 
-      <!-- Paired styling section with complementary pieces -->
+      <!-- Paired Styling Sections -->
       <section id="pairs-shoes" class="container">
         <div class="section-head reveal">
           <div>
@@ -204,14 +214,13 @@
             <h2>Luxury Shoes</h2>
           </div>
         </div>
-
         <div class="pairs-grid">
           <div class="pair-card reveal delay-1">
-         <a href="S1.jpg"><div class="pair-img" style="background-image:url('S1.jpg')" aria-label="Shoe 1"></div></a>
+            <a href="S1.jpg" aria-label="View Luxury Shoe Edition 1"><div class="pair-img" style="background-image:url('S1.jpg')"></div></a>
             <div class="pair-label">Shoe</div>
           </div>
           <div class="pair-card reveal delay-2">
-          <a href="S2.jpg"><div class="pair-img" style="background-image:url('S2.jpg')" aria-label="Shoe 2"></div></a>
+            <a href="S2.jpg" aria-label="View Luxury Shoe Edition 2"><div class="pair-img" style="background-image:url('S2.jpg')"></div></a>
             <div class="pair-label">Shoe</div>
           </div>
         </div>
@@ -224,14 +233,13 @@
             <h2>Styled Caps</h2>
           </div>
         </div>
-
         <div class="pairs-grid">
           <div class="pair-card reveal delay-1">
-           <a href="C1.jpg"><div class="pair-img" style="background-image:url('C1.jpg')" aria-label="Cap 1"></div></a>
+            <a href="C1.jpg" aria-label="View Styled Cap Edition 1"><div class="pair-img" style="background-image:url('C1.jpg')"></div></a>
             <div class="pair-label">Styled Cap</div>
           </div>
           <div class="pair-card reveal delay-2">
-           <a href="C2.jpg"><div class="pair-img" style="background-image:url('C2.jpg')" aria-label="Cap 2"></div></a>
+            <a href="C2.jpg" aria-label="View Styled Cap Edition 2"><div class="pair-img" style="background-image:url('C2.jpg')"></div></a>
             <div class="pair-label">Styled Cap</div>
           </div>
         </div>
@@ -241,17 +249,16 @@
         <div class="section-head reveal">
           <div>
             <div class="kicker">Paired Styling</div>
-            <h2>Senators Wears</h2>
+            <h2>Senator Wear</h2>
           </div>
         </div>
-
         <div class="pairs-grid">
           <div class="pair-card reveal delay-1">
-          <a href="SN3.jpg"><div class="pair-img" style="background-image:url('SN3.jpg')" aria-label="Senator Wear 1"></div></a>
+            <a href="SN3.jpg" aria-label="View Senator Luxury Wear 1"><div class="pair-img" style="background-image:url('SN3.jpg')"></div></a>
             <div class="pair-label">Luxury Wear</div>
           </div>
           <div class="pair-card reveal delay-2">
-          <a href="SN2.jpg"><div class="pair-img" style="background-image:url('SN2.jpg')" aria-label="Senator Wear 2"></div></a>
+            <a href="SN2.jpg" aria-label="View Senator Luxury Wear 2"><div class="pair-img" style="background-image:url('SN2.jpg')"></div></a>
             <div class="pair-label">Luxury Wear</div>
           </div>
         </div>
@@ -264,14 +271,13 @@
             <h2>Luxury Ties</h2>
           </div>
         </div>
-
         <div class="pairs-grid">
           <div class="pair-card reveal delay-1">
-          <a href="T1.jpg"><div class="pair-img" style="background-image:url('T1.jpg')" aria-label="Tie 1"></div></a>
+            <a href="T1.jpg" aria-label="View Luxury Tie Edition 1"><div class="pair-img" style="background-image:url('T1.jpg')"></div></a>
             <div class="pair-label">Luxury Tie</div>
           </div>
           <div class="pair-card reveal delay-2">
-          <a href="T2.jpg"><div class="pair-img" style="background-image:url('T2.jpg')" aria-label="Tie 2"></div></a>
+            <a href="T2.jpg" aria-label="View Luxury Tie Edition 2"><div class="pair-img" style="background-image:url('T2.jpg')"></div></a>
             <div class="pair-label">Luxury Tie</div>
           </div>
         </div>
@@ -281,22 +287,22 @@
         <div class="section-head reveal">
           <div>
             <div class="kicker">Paired Styling</div>
-            <h2>Stockys</h2>
+            <h2>Luxury Accessories</h2>
           </div>
         </div>
-
         <div class="pairs-grid">
           <div class="pair-card reveal delay-1">
-          <a href="ST1.jpg"><div class="pair-img" style="background-image:url('ST1.jpg')" aria-label="Stocky 1"></div></a>
+            <a href="ST1.jpg" aria-label="View Accessory Edition 1"><div class="pair-img" style="background-image:url('ST1.jpg')"></div></a>
             <div class="pair-label">Stocky</div>
           </div>
           <div class="pair-card reveal delay-2">
-          <a href="ST2.jpg"><div class="pair-img" style="background-image:url('ST2.jpg')" aria-label="Stocky 2"></div></a>
+            <a href="ST2.jpg" aria-label="View Luxury Wear Variant"><div class="pair-img" style="background-image:url('ST2.jpg')"></div></a>
             <div class="pair-label">Luxury Wear</div>
           </div>
         </div>
       </section>
 
+      <!-- Atelier Description -->
       <section id="atelier" class="container">
         <div class="about-grid">
           <div class="about-panel reveal">
@@ -321,6 +327,7 @@
         </div>
       </section>
 
+      <!-- Contact / Engagement Section -->
       <section id="contact" class="container">
         <div class="contact-panel reveal">
           <div>
@@ -334,16 +341,16 @@
           <div class="signup" role="group" aria-label="Newsletter signup">
             <label for="email">Join the private list</label>
             <div class="signup-row">
-              <input id="email" type="email" placeholder="Doug-Aveigo" aria-label="Email address" />
+              <input id="email" type="email" placeholder="previews@dougaveigo.com" aria-label="Email address" />
               <button class="btn" id="joinBtn" type="button">Request</button>
             </div>
             <div class="note" id="signupNote"></div>
 
-            <div  class="whatsapp-wrap" aria-label="WhatsApp contact">
-              <a class="whatsapp-link" target="_blank" rel="noopener"  href="https://wa.me/+2347030938698">
-                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="36" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-</svg>
+            <div class="whatsapp-wrap" aria-label="WhatsApp contact">
+              <a class="whatsapp-link" target="_blank" rel="noopener" href="https://wa.me/+2347030938698">
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="36" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                </svg>
                 WhatsApp Private Preview
               </a>
               <div class="whatsapp-note">Text us for availability & styling.</div>
@@ -353,18 +360,18 @@
       </section>
     </main>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <p>&copy; 2026 Dough-Aveigo. All rights reserved.</p>
-        
+    <!-- Footer Area -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 Doug-Aveigo. All rights reserved.</p>
         <div class="footer-socials">
-            <a href="#" target="_blank" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank" aria-label="X (Twitter)" class="social-icon"><i class="fab fa-x-twitter"></i></a>
-            <a href="#" target="_blank" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="X (Twitter)" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
   </div>
   
   <script src="index.js"></script>
