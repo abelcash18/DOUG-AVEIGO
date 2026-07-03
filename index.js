@@ -1,3 +1,4 @@
+// --- 1. Scroll Reveal Animation (Intersection Observer) ---
 const revealItems = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
@@ -12,16 +13,19 @@ if ('IntersectionObserver' in window) {
 
   revealItems.forEach((item) => observer.observe(item));
 } else {
+  // Fallback for older browsers
   revealItems.forEach((item) => item.classList.add('visible'));
 }
 
+// --- 2. Interactive 3D Card Hover Effect ---
 document.querySelectorAll('.collection-card, .product-card').forEach((card) => {
   card.addEventListener('pointermove', (event) => {
     const rect = card.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
     const y = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
 
-    card.style.transform = `translateY(-8px) rotateX(${y}deg) rotateY(${x}deg)`;
+    // Added perspective to keep the 3D element rendering smoothly across modern devices
+    card.style.transform = `perspective(1000px) translateY(-8px) rotateX(${y}deg) rotateY(${x}deg)`;
   });
 
   card.addEventListener('pointerleave', () => {
@@ -29,50 +33,73 @@ document.querySelectorAll('.collection-card, .product-card').forEach((card) => {
   });
 });
 
-const email = document.getElementById('email');
+// --- 3. Private Preview Email Validation ---
+const emailInput = document.getElementById('email');
 const note = document.getElementById('signupNote');
 const joinButton = document.getElementById('joinBtn');
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-joinButton.addEventListener('click', () => {
-  const value = email.value.trim();
+function handleSignup() {
+  const value = emailInput.value.trim();
 
   if (!emailPattern.test(value)) {
-    note.textContent = 'Enter an email address to preview the request confirmation.';
+    note.textContent = 'Enter a valid email address to preview the request confirmation.';
     note.style.color = '#edd08c';
     return;
   }
 
-  note.textContent = 'Preview request received. DOUG AVEIGO would follow up with a private collection invitation.';
+  note.textContent = 'Preview request received. DOUG AVEIGO will follow up with a private collection invitation.';
   note.style.color = '#d8b56d';
+}
+
+// Click Trigger
+joinButton.addEventListener('click', handleSignup);
+
+// Enter Key Press Trigger
+emailInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    handleSignup();
+  }
 });
 
+// --- 4. Global Page Preloader ---
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
-  loader.style.opacity = 0;
-  setTimeout(() => loader.style.display = 'none', 7500);
+  if (loader) {
+    loader.style.opacity = 0;
+    // Lowered timeout from 7500ms to 500ms to match normal opacity transitions 
+    // and prevent an invisible container from trapping background click events.
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
+  }
 });
 
+// --- 5. New Arrival Popup Trigger ---
 document.addEventListener("DOMContentLoaded", function () {
-    const popup = document.getElementById("customPopup");
-    const closeBtn = document.querySelector(".popup-close-btn");
+  const popup = document.getElementById("customPopup");
+  const closeBtn = document.querySelector(".popup-close-btn");
 
-    // Automatically trigger popup 1.5 seconds after landing
+  if (popup) {
+    // Automatically trigger popup 1.5 seconds after loading the layout structure
     setTimeout(() => {
-        popup.style.display = "flex";
+      popup.style.display = "flex";
     }, 1500);
 
-    // Close functionality
     function closePopup() {
-        popup.style.display = "none";
+      popup.style.display = "none";
     }
 
-    closeBtn.addEventListener("click", closePopup);
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closePopup);
+    }
 
     // Closes if background overlay is clicked (but not the white card itself)
     popup.addEventListener("click", function (e) {
-        if (e.target === popup) {
-            closePopup();
-        }
+      if (e.target === popup) {
+        closePopup();
+      }
     });
+  }
 });
