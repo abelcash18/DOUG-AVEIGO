@@ -1135,20 +1135,35 @@ section {
 
 /* Mobile Responsive Fixes */
 @media (max-width: 768px) {
-  /* Forces the about grid to stack vertically instead of hiding the image */
+  /* Prevent the parent container from overflowing */
   .about-grid {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* Snippets anything trying to break out */
+    box-sizing: border-box;
   }
 
-  /* Gives the empty atelier image div explicit height and bounding context on mobile */
+  /* Force the image to strictly stay inside the mobile screen */
   .atelier-image {
-    width: 100%;
-    height: 350px; /* Adjust this value to make the image taller or shorter on mobile */
-    background-size: cover;
+    width: 100% !important;     /* Forces it to match the screen width */
+    max-width: 100%;
+    height: 300px;              /* Explicit height so it doesn't flatten */
+    background-size: cover;     /* Keeps the image aspect-ratio clean */
     background-position: center;
     background-repeat: no-repeat;
-    order: -1; /* Optional: Places the image ABOVE the text on mobile for an editorial look */
+    box-sizing: border-box;
+    order: -1;                  /* Keeps image above the text on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
   }
 }
