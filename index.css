@@ -1167,3 +1167,29 @@ section {
     box-sizing: border-box;
   }
 }
+
+@media (max-width: 768px) {
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .atelier-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    /* This creates a perfect 4:3 box context on mobile screens */
+    aspect-ratio: 4 / 3; 
+    
+    /* Change 'cover' to 'contain' if the image is getting clipped at the edges */
+    background-size: contain !important; 
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    /* Keeps background color matching your theme if it shrinks to fit */
+    background-color: transparent; 
+    order: -1; 
+  }
+}
